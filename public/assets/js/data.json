@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "gambar": "https://i.pinimg.com/originals/a8/b9/ff/a8b9ff74ed0f3efd97e09a7a0447f892.jpg",
+    "judul": "Ten Thousand Skies Above You  ",
+    "deskripsi": "'Ten Thousand Skies Above You's karya Claudia Gray adalah buku kedua dalam seri Firebird. Marguerite Caine, seorang pelompat dimensi, berpetualang melintasi alam semesta untuk menyelamatkan orang yang dicintainya. Di tengah cinta dan tugasnya, Marguerite menghadapi pilihan sulit dan menghadapi konsekuensi. Dengan alam semesta yang kaya dan plot yang menarik, buku ini memadukan petualangan dan romansa dengan perjalanan emosional yang menggugah.",
+    "harga": 100000,
+    "diskon":3000,
+    "kategori": "Fiksi",
+    "quantity": 0,
+    "popup" :"popup"
+  },
+  {
+    "id": 2,
+    "gambar": "https://images-na.ssl-images-amazon.com/images/I/81WcnNQ-TBL.jpg",
+    "judul": "Valll Push Test",
+    "deskripsi": " Desc Valll Push Test",
+    "harga": 150000,
+    "diskon":5000,
+    "kategori": "Non-Fiksi",
+    "quantity": 0,
+    "popup" :"popup1"
+  },
+  {
+    "id": 3,
+    "gambar": "https://images-na.ssl-images-amazon.com/images/I/81UWB7oUZ0L.jpg",
+    "judul": "Buku 3",
+    "deskripsi": "Deskripsi Buku 3",
+    "harga": 80000,
+    "diskon":4000,
+    "kategori": "Fiksi",
+    "quantity": 0,
+    "popup" :"popup2"
+  },
+  {
+    "id": 4,
+    "gambar": "https://images-na.ssl-images-amazon.com/images/I/7167iiDUeAL.jpg",
+    "judul": "Buku 4",
+    "deskripsi": "Deskripsi Buku 4",
+    "harga": 180000,
+    "diskon":8000,
+    "kategori": "Fiksi",
+    "quantity": 0,
+    "popup" :"popup3"
+  },
+  {
+    "id": 5,
+    "gambar": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2019%2F07%2Fchances-are-1-2000.jpg&q=85",
+    "judul": "Buku 5",
+    "deskripsi": "Deskripsi Buku 5",
+    "harga": 300000,
+    "diskon":9000,
+    "kategori": "Fiksi",
+    "quantity": 0,
+    "popup" :"popup4"
+  },
+  {
+    "id": 6,
+    "gambar": "https://images-na.ssl-images-amazon.com/images/I/7167iiDUeAL.jpg",
+    "judul": "Buku 6",
+    "deskripsi": "Deskripsi Buku 6",
+    "harga": 180000,
+    "diskon":7000,
+    "kategori": "Fiksi",
+    "quantity": 0,
+    "popup" :"popup3"
+  },
+  {
+    "id": 7,
+    "gambar": "https://images-na.ssl-images-amazon.com/images/I/81WcnNQ-TBL.jpg",
+    "judul": "Buku 7",
+    "deskripsi": "Deskripsi Buku 7",
+    "harga": 150000,
+    "diskon":5000,
+    "kategori": "Non-Fiksi",
+    "quantity": 0,
+    "popup" :"popup1"
+  },
+  {
+    "id": 8,
+    "gambar": "https://images-na.ssl-images-amazon.com/images/I/91M4E+SURUL.jpg",
+    "judul": "Buku 8",
+    "deskripsi": "Deskripsi Buku 8",
+    "harga": 230000,
+    "diskon":4000,
+    "kategori": "Fiksi",
+    "quantity": 0,
+    "popup" :"popup5"
+  }
+]
