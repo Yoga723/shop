@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
 import "./style.css";
+import { generatePaths } from "@/lib/generateStaticPaths";
 
 const Page = () => {
   const router = useRouter();
@@ -58,3 +59,9 @@ const Page = () => {
 };
 
 export default Page;
+
+// Fungsi ini diperlukan untuk setiap dynamic page untuk saat proses build nantinya.
+// dynamic page adalah folder yang menggunakan []. Seperti /produk/[id]
+export async function generateStaticParams() {
+  return generatePaths(ProductList, "id");
+}
