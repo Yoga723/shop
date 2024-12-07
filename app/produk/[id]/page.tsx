@@ -1,58 +1,39 @@
-"use client";
 import React from "react";
 import ProductList, { ProductProps } from "@/public/data/products";
-import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
 import "./style.css";
-import { generatePaths } from "@/lib/generateStaticPaths";
 
-const Page = () => {
-  const router = useRouter();
-  const pageId = useParams().id;
-  const [testingBool, setTestingBool] = useState(false);
-  const [produkData, setProdukData] = useState<ProductProps | null>(null);
+const Page = ({ params }: { params: { id: string } }) => {
+  const product = ProductList.find((item: ProductProps) => item.id.toString() === params.toString());
 
-  useEffect(() => {
-    const filterData = () => {
-      const item = ProductList.find((item: ProductProps) => item.id.toString() === pageId);
-      if (item) setProdukData(item);
-    };
-
-    filterData();
-  }, [pageId, testingBool]);
-
+  if (!product) {
+    return (
+      <main className="section min-vh-100 pt-5">
+        <h1 className="text-black mt-5">Error: Product Not Found!</h1>
+      </main>
+    );
+  }
   return (
     <main className="section min-vh-100">
       <section>
-        {produkData ? (
-          <article className="container">
-            {/* Start of Gambar Produk */}
-            <section className="section col">
-              <figure className="overflow-hidden product-img position-relative">
-                <Image
-                  fill
-                  objectFit="contain"
-                  src={`${produkData.gambar[0].src}`}
-                  alt={`${produkData.gambar[0].title}`}
-                />
-              </figure>
-              <h2>{produkData.title}</h2>
-              <p>{produkData.availableFormat}</p>
-            </section>
-            {/* End of Gambar Produk */}
+        <article className="container">
+          {/* Start of Gambar Produk */}
+          <section className="section col">
+            <figure className="overflow-hidden product-img position-relative">
+              <Image
+                fill
+                objectFit="contain"
+                src={`${product.gambar[0].src}`}
+                alt={`${product.gambar[0].title}`}
+              />
+            </figure>
+            <h2>{product.title}</h2>
+            <p>{product.availableFormat}</p>
+          </section>
+          {/* End of Gambar Produk */}
 
-            <button
-              className="z-3"
-              onClick={() => setTestingBool(!testingBool)}>
-              Test button
-            </button>
-          </article>
-        ) : (
-          <div>
-            <h1>Error, Data not Found !</h1>
-          </div>
-        )}
+        </article>
       </section>
     </main>
   );

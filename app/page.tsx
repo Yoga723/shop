@@ -1,7 +1,6 @@
 "use client";
 import "./globals.css";
 import { ProductProps } from "@/types";
-import { GetStaticProps } from "next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import HorizontalSwiper from "@/components/Swiper/HorizontalSwiper";

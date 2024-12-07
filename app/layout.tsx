@@ -147,7 +147,7 @@ export default function RootLayout({
         <GlobalFonts />
       </head>
       <body className="antialiased">
-        <main style={{ marginTop: "100px " }}>
+        <main style={{ marginTop: "100px" }}>
           <main-header></main-header>
           {children}
           <main-footer></main-footer>
