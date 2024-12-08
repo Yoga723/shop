@@ -3,10 +3,13 @@ import ProductList, { ProductProps } from "@/public/data/products";
 import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
 import "./style.css";
+import { generatePaths } from "@/lib/generateStaticPaths";
 
 const Page = ({ params }: { params: { id: string } }) => {
-  const product = ProductList.find((item: ProductProps) => item.id.toString() === params.toString());
+  const product = ProductList.find((item: ProductProps) => item.id.toString() === params.id);
 
+  console.log("this is params: ", params.id);
+  console.log("this is product: ", product);
   if (!product) {
     return (
       <main className="section min-vh-100 pt-5">
@@ -32,7 +35,6 @@ const Page = ({ params }: { params: { id: string } }) => {
             <p>{product.availableFormat}</p>
           </section>
           {/* End of Gambar Produk */}
-
         </article>
       </section>
     </main>
