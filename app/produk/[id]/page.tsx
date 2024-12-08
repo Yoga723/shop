@@ -8,8 +8,6 @@ import { generatePaths } from "@/lib/generateStaticPaths";
 const Page = async ({ params }: { params: { id: string } }) => {
   const product = await ProductList.find((item: ProductProps) => item.id.toString() === params.id);
 
-  console.log("this is params: ", params.id);
-  console.log("this is product: ", product);
   if (!product) {
     return (
       <main className="section min-vh-100 pt-5">

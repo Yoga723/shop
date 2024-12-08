@@ -1,21 +1,10 @@
-"use client";
 import "./globals.css";
-import { ProductProps } from "@/types";
+import ProductList from "@/public/data/products";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import HorizontalSwiper from "@/components/Swiper/HorizontalSwiper";
+// import HorizontalSwiper from "@/components/Swiper/HorizontalSwiper";
 
-export default function Home() {
-  const [products, setProducts] = useState<ProductProps[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/data/products.json");
-      const data = await res.json();
-      setProducts(data);
-    };
-    fetchData();
-  }, []);
+export default async function Home() {
+  const products = await ProductList;
 
   return (
     <main className="main">
