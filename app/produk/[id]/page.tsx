@@ -1,12 +1,12 @@
 import React from "react";
 import ProductList, { ProductProps } from "@/public/data/products";
-import { useRouter, useParams } from "next/navigation";
+// import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
 import "./style.css";
 import { generatePaths } from "@/lib/generateStaticPaths";
 
-const Page = ({ params }: { params: { id: string } }) => {
-  const product = ProductList.find((item: ProductProps) => item.id.toString() === params.id);
+const Page = async ({ params }: { params: { id: string } }) => {
+  const product = await ProductList.find((item: ProductProps) => item.id.toString() === params.id);
 
   console.log("this is params: ", params.id);
   console.log("this is product: ", product);
@@ -46,5 +46,7 @@ export default Page;
 // Fungsi ini diperlukan untuk setiap dynamic page untuk saat proses build nantinya.
 // dynamic page adalah folder yang menggunakan []. Seperti /produk/[id]
 export async function generateStaticParams() {
+  const path = generatePaths(ProductList, "id");
+  console.log("Ini paths : ", path);
   return generatePaths(ProductList, "id");
 }
