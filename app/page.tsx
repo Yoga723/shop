@@ -6,7 +6,6 @@ import Link from "next/link";
 
 export default function Home() {
   const products = ProductList;
-  // const LocalBtnScript = dynamic(() => import("@/components/localbtn/script"));
 
   return (
     <main className="main">
@@ -24,7 +23,7 @@ export default function Home() {
         </button>
 
         <div className="w-50 h-50 mb-4">
-          <img src="/assets/img/hero.webp" className="img-fluid" />
+          <img src="/shop/assets/img/hero.webp" className="img-fluid" />
         </div>
 
         <div
