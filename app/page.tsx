@@ -3,12 +3,13 @@ import ProductList from "@/public/data/products";
 import Link from "next/link";
 // import HorizontalSwiper from "@/components/Swiper/HorizontalSwiper";
 
-export default async function Home() {
-  const products = await ProductList;
+export default function Home() {
+  const products = ProductList;
 
   return (
     <main className="main">
       <section className="section w-100 d-flex justify-content-center align-items-center flex-column">
+        <h1>About {new Date().toLocaleDateString()}</h1>
         <button id="testBtn">Test Here</button>
 
         <div
