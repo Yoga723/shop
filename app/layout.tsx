@@ -3,6 +3,9 @@ import { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import Head from "next/head";
+import { basePath } from "@/next.config";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 // Global metadata
 export const metadata: Metadata = {
@@ -88,43 +91,43 @@ const GlobalScripts = () => (
   <>
     {/* Part JS */}
     <Script
-      src="/shop/assets/part/shop/shop.js"
+      src={`${basePath}/assets/part/shop/shop.js`}
       defer
     />
 
     {/* Main Custom JS */}
     <Script
-      src="/shop/assets/js/script.js"
+      src={`${basePath}/assets/js/script.js`}
       defer
     />
     <Script
-      src="/shop/assets/js/headerfooter.js"
+      src={`${basePath}/assets/js/headerfooter.js`}
       strategy="beforeInteractive"
     />
     <Script
-      src="/shop/assets/js/main.js"
+      src={`${basePath}/assets/js/main.js`}
       defer
     />
     <Script
-      src="/shop/assets/js/index.min.js"
+      src={`${basePath}/assets/js/index.min.js`}
       defer
     />
     <Script
-      src="/shop/assets/js/cart.js"
+      src={`${basePath}/assets/js/cart.js`}
       defer
     />
 
     {/* Vendor JS */}
     <Script
-      src="/shop/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      src={`${basePath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js`}
       defer
     />
     <Script
-      src="/shop/assets/vendor/glightbox/js/glightbox.min.js"
+      src={`${basePath}/assets/vendor/glightbox/js/glightbox.min.js`}
       defer
     />
     <Script
-      src="/shop/assets/vendor/swiper/swiper-bundle.min.js"
+      src={`${basePath}/assets/vendor/swiper/swiper-bundle.min.js`}
       defer
     />
 
@@ -149,9 +152,11 @@ export default function RootLayout({
       </Head>
       <body className="antialiased">
         <main style={{ marginTop: "100px" }}>
-          <main-header></main-header>
+          {/* <main-header></main-header> */}
+          <Header />
           {children}
-          <main-footer></main-footer>
+          <Footer />
+          {/* <main-footer></main-footer> */}
         </main>
 
         {/* Global Scripts */}

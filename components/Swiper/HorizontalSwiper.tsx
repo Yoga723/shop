@@ -1,10 +1,9 @@
 import React from "react";
-import Swiper from "swiper";
 import "swiper/css";
-import "./swiper-css.css";
+import { Swiper } from "swiper";
 
 const HorizontalSwiper = () => {
-  new Swiper(".my-swiper", {
+  const swiper = new Swiper(".my-swiper", {
     direction: "horizontal",
     loop: true,
     autoplay: {
@@ -31,9 +30,10 @@ const HorizontalSwiper = () => {
       prevEl: ".swiper-button-prev",
     },
   });
+  
 
   return (
-    <div className="my-swiper overflow-hidden">
+    <div id="swiper" className="my-swiper overflow-hidden">
       <div className="swiper-wrapper modal-img-swiper">
         <div className="swiper-slide">1</div>
         <div className="swiper-slide">2</div>

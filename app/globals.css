@@ -1,6 +1,8 @@
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap");
 
+
+/* /shop merupakan basePath dari repo ini, sesuaikan dengan basePath di file next.config.ts  */
 /* Vendor CSS */
 @import "/shop/assets/vendor/fontawesome-free/css/all.min.css";
 @import "/shop/assets/vendor/bootstrap/css/bootstrap.css";

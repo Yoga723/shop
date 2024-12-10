@@ -21,26 +21,28 @@ export default async function Page({ params }: any) {
     );
   }
   return (
-    <main className="section min-vh-100">
-      <section>
-        <article className="container">
-          {/* Start of Gambar Produk */}
-          <section className="section col">
-            <figure className="overflow-hidden product-img position-relative">
-              <Image
-                fill
-                objectFit="contain"
-                src={`${product.gambar[0].src}`}
-                alt={`${product.gambar[0].title}`}
-              />
-            </figure>
-            <h2>{product.title}</h2>
-            <p>{product.availableFormat}</p>
-          </section>
-          {/* End of Gambar Produk */}
-        </article>
-      </section>
-    </main>
+    <>
+      <main className="section min-vh-100">
+        <section>
+          <article className="container">
+            {/* Start of Gambar Produk */}
+            <section className="section col">
+              <figure className="overflow-hidden product-img position-relative">
+                <Image
+                  fill
+                  objectFit="contain"
+                  src={`${product.gambar[0].src}`}
+                  alt={`${product.gambar[0].title}`}
+                />
+              </figure>
+              <h2>{product.title}</h2>
+              <p>{product.availableFormat}</p>
+            </section>
+            {/* End of Gambar Produk */}
+          </article>
+        </section>
+      </main>
+    </>
   );
 }
 
