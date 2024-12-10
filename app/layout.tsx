@@ -2,6 +2,7 @@
 import { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import Head from "next/head";
 
 // Global metadata
 export const metadata: Metadata = {
@@ -98,7 +99,7 @@ const GlobalScripts = () => (
     />
     <Script
       src="/assets/js/headerfooter.js"
-      strategy="afterInteractive"
+      strategy="beforeInteractive"
     />
     <Script
       src="/assets/js/main.js"
@@ -142,10 +143,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <GlobalMetadata />
         <GlobalFonts />
-      </head>
+      </Head>
       <body className="antialiased">
         <main style={{ marginTop: "100px" }}>
           <main-header></main-header>
