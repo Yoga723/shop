@@ -88,43 +88,43 @@ const GlobalScripts = () => (
   <>
     {/* Part JS */}
     <Script
-      src="/assets/part/shop/shop.js"
+      src="/shop/assets/part/shop/shop.js"
       defer
     />
 
     {/* Main Custom JS */}
     <Script
-      src="/assets/js/script.js"
+      src="/shop/assets/js/script.js"
       defer
     />
     <Script
-      src="/assets/js/headerfooter.js"
+      src="/shop/assets/js/headerfooter.js"
       strategy="beforeInteractive"
     />
     <Script
-      src="/assets/js/main.js"
+      src="/shop/assets/js/main.js"
       defer
     />
     <Script
-      src="/assets/js/index.min.js"
+      src="/shop/assets/js/index.min.js"
       defer
     />
     <Script
-      src="/assets/js/cart.js"
+      src="/shop/assets/js/cart.js"
       defer
     />
 
     {/* Vendor JS */}
     <Script
-      src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+      src="/shop/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
       defer
     />
     <Script
-      src="/assets/vendor/glightbox/js/glightbox.min.js"
+      src="/shop/assets/vendor/glightbox/js/glightbox.min.js"
       defer
     />
     <Script
-      src="/assets/vendor/swiper/swiper-bundle.min.js"
+      src="/shop/assets/vendor/swiper/swiper-bundle.min.js"
       defer
     />
 
