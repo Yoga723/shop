@@ -1,7 +1,6 @@
 import "./globals.css";
 import "@/components/localbtn/style.css";
 import ProductList from "@/public/data/products";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 // import HorizontalSwiper from "@/components/Swiper/HorizontalSwiper";
 
@@ -23,11 +22,10 @@ export default function Home() {
           className="local-css">
           Test import local CSS is working
         </button>
-        <button
-          id="testBtn"
-          className="btn btn-primary">
-          Test Bootstrap is Working
-        </button>
+
+        <div className="w-50 h-50 mb-4">
+          <img src="/assets/img/hero.webp" className="img-fluid" />
+        </div>
 
         <div
           className="container"
