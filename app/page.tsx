@@ -19,11 +19,6 @@ export default function Home() {
           Test Bootstrap is Working
         </button>
         <button
-          id="testBtn"
-          class="btn btn-primary">
-          Test Bootstrap is Working
-        </button>
-        <button
           id="testLocal"
           className="local-css">
           Test import local CSS is working
