@@ -1,4 +1,4 @@
-import "./globals.css";
+// import "./globals.css";
 import "@/components/localbtn/style.css";
 import ProductList from "@/public/data/products";
 import Head from "next/head";

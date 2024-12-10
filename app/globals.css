@@ -2,20 +2,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap");
 
 /* Vendor CSS */
-@import "/assets/vendor/fontawesome-free/css/all.min.css";
-@import "/assets/vendor/bootstrap/css/bootstrap.css";
-@import "/assets/vendor/bootstrap-icons/bootstrap-icons.css";
-@import "/assets/vendor/boxicons/css/boxicons.min.css";
-@import "/assets/vendor/glightbox/css/glightbox.min.css";
-@import "/assets/vendor/remixicon/remixicon.css";
-@import "/assets/vendor/swiper/swiper-bundle.css";
-@import "/assets/vendor/international-phone-number/intlTelInput.css";
+@import "/shop/assets/vendor/fontawesome-free/css/all.min.css";
+@import "/shop/assets/vendor/bootstrap/css/bootstrap.css";
+@import "/shop/assets/vendor/bootstrap-icons/bootstrap-icons.css";
+@import "/shop/assets/vendor/boxicons/css/boxicons.min.css";
+@import "/shop/assets/vendor/glightbox/css/glightbox.min.css";
+@import "/shop/assets/vendor/remixicon/remixicon.css";
+@import "/shop/assets/vendor/swiper/swiper-bundle.css";
+@import "/shop/assets/vendor/international-phone-number/intlTelInput.css";
 
 /* Main CSS */
-@import "/assets/stylebook.css";
+@import "/shop/assets/stylebook.css";
 
 /* Part CSS */
-@import "/assets/part/shop/shop.css";
+@import "/shop/assets/part/shop/shop.css";
 
 /**
 * Template Name: Medilab
