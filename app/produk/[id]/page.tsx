@@ -1,5 +1,6 @@
 import React from "react";
-import ProductList, { ProductProps } from "@/public/data/products";
+import AllProducts from "@/public/data";
+import { isMerchandise, ProductProps } from "@/public/data/productProps";
 import Image from "next/image";
 import "./style.css";
 import { generatePaths } from "@/lib/generateStaticPaths";
@@ -11,8 +12,10 @@ export const metadata: Metadata = {
 
 export default async function Page({ params }: any) {
   const { id } = await params;
-  const product = ProductList.find((item: ProductProps) => item.id.toString() === id);
+  const product = await AllProducts.find((item: ProductProps) => item.id.toString() === id);
+  console.log(AllProducts);
 
+  // Tampilkan ini jika id produk tidak ada
   if (!product) {
     return (
       <main className="section min-vh-100 pt-5">
@@ -36,7 +39,9 @@ export default async function Page({ params }: any) {
                 />
               </figure>
               <h2>{product.title}</h2>
-              <p>{product.availableFormat}</p>
+              {isMerchandise(product) && <div>{product.stock}</div>}
+              {/* <p>{product.availableFormat?.join(" ")}</p> */}
+              <div dangerouslySetInnerHTML={{ __html: product.deskripsi }} />
             </section>
             {/* End of Gambar Produk */}
           </article>
@@ -49,7 +54,7 @@ export default async function Page({ params }: any) {
 // Fungsi ini diperlukan untuk setiap dynamic page untuk saat proses build nantinya.
 // dynamic page adalah folder yang menggunakan []. Seperti /produk/[id]
 export async function generateStaticParams() {
-  const path = await generatePaths(ProductList, "id");
+  const path = await generatePaths(AllProducts, "id");
   console.log("Ini paths : ", path);
-  return generatePaths(ProductList, "id");
+  return generatePaths(AllProducts, "id");
 }

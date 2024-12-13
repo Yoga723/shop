@@ -152,11 +152,9 @@ export default function RootLayout({
       </Head>
       <body className="antialiased">
         <main style={{ marginTop: "100px" }}>
-          {/* <main-header></main-header> */}
           <Header />
           {children}
           <Footer />
-          {/* <main-footer></main-footer> */}
         </main>
 
         {/* Global Scripts */}

@@ -9,14 +9,14 @@ const Header = () => {
     <div id="topbar" className="d-flex align-items-center fixed-top">
     <div className="container d-flex justify-content-between">
       <div className="contact-info d-flex align-items-center">
-        <i className="bi bi-envelope"></i> <a href="mailto:admin@dialogika.co">admin@dialogika.co</a>
+        <i className="bi bi-envelope"></i> <Link href="mailto:admin@dialogika.co">admin@dialogika.co</Link>
         <i className="bi bi-phone"></i> +62 851 6299 2597
       </div>
       <div className="d-none d-lg-flex social-links align-items-center">
-        <a href="https://link.dialogika.co/twitter" className="twitter"><i className="bi bi-twitter"></i></a>
-        <a href="https://link.dialogika.co/facebook" className="facebook"><i className="bi bi-facebook"></i></a>
-        <a href="https://link.dialogika.co/instagram" className="instagram"><i className="bi bi-instagram"></i></a>
-        <a href="https://link.dialogika.co/linkedin" className="linkedin"><i className="bi bi-linkedin"></i></a>
+        <Link href="https://link.dialogika.co/twitter" className="twitter"><i className="bi bi-twitter"></i></Link>
+        <Link href="https://link.dialogika.co/facebook" className="facebook"><i className="bi bi-facebook"></i></Link>
+        <Link href="https://link.dialogika.co/instagram" className="instagram"><i className="bi bi-instagram"></i></Link>
+        <Link href="https://link.dialogika.co/linkedin" className="linkedin"><i className="bi bi-linkedin"></i></Link>
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@ const Header = () => {
   <header id="header" className="fixed-top">
     <div className="container d-flex align-items-center">
 
-       <a href="../index.html" className="logo me-auto"><img src={`${basePath}/assets/img/logo.webp`} alt="Logo Dialogika" className="img-fluid"/></a>
+       <Link href="../index.html" className="logo me-auto"><img src={`${basePath}/assets/img/logo.webp`} alt="Logo Dialogika" className="img-fluid"/></Link>
 
        <nav id="navbar" className="navbar order-last order-lg-0">
   <ul className="navbar-desktop-list">
@@ -122,7 +122,7 @@ const Header = () => {
 
        {/* <!-- .navbar --> */}
 
-      <a href="https://www.dialogika.co/program/" className="appointment-btn">Daftar <span className="d-md-inline">Sekarang</span></a>
+      <Link href="https://www.dialogika.co/program/" className="appointment-btn">Daftar <span className="d-md-inline">Sekarang</span></Link>
 
     </div>
   </header>
@@ -133,20 +133,20 @@ const Header = () => {
     <div className="container-fluid">
       <div className="offcanvas offcanvas-start" tabIndex={-1} id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div className="offcanvas-header">
-          <a href="../index.html">
+          <Link href="../index.html">
             <img alt='Logo Dialogika' src={`${basePath}/assets/img/logo.webp`} className="offcanvas-title" id="offcanvasNavbarLabel"/>
-          </a>
+          </Link>
           <button type="button" className="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
         <div className="offcanvas-body">
-          <a href="#hero"><div className="card"><div className="card-body">Home</div></div></a>
+          <Link href="#hero"><div className="card"><div className="card-body">Home</div></div></Link>
           <div className="card">
-            <a href="#program-collapse" data-bs-toggle="collapse">
+            <Link href="#program-collapse" data-bs-toggle="collapse">
               <div className="card-body d-flex justify-content-between">
                 <span>Program</span>
                 <i className='bx bxs-chevron-down bx-tada'></i>
               </div>
-            </a>
+            </Link>
             <div className="collapse" id="program-collapse">
   {/* Online Section */}
   <button
@@ -235,25 +235,25 @@ const Header = () => {
 </div>
 
           </div>
-          <a href="../corporate/"><div className="card card-body">Corporate</div></a>
-          <a href="../event/"><div className="card card-body">
+          <Link href="../corporate/"><div className="card card-body">Corporate</div></Link>
+          <Link href="../event/"><div className="card card-body">
             <div className="justify-content-between d-flex">
               <span>Event </span>
               <span className="badge bg-info rounded-pill">New</span> 
             </div>
-          </div></a>
-          <a href="../service/" onClick={()=> (false)}><div className="card card-body">
+          </div></Link>
+          <Link href="../service/" onClick={()=> (false)}><div className="card card-body">
             <div className="justify-content-between d-flex">
               <span>Service </span>
               <span className="badge bg-warning rounded-pill">Coming Soon</span>
             </div>
-          </div></a>
-          <a href="https://www.dialogika.co/shop/" onClick={()=>(false)}><div className="card card-body">
+          </div></Link>
+          <Link href="https://www.dialogika.co/shop/" onClick={()=>(false)}><div className="card card-body">
             <div className="justify-content-between d-flex">
               <span>Shop </span>
             </div>
-          </div></a>
-          <a href="../blog/"><div className="card card-body">Blog</div></a>
+          </div></Link>
+          <Link href="../blog/"><div className="card card-body">Blog</div></Link>
         </div>
       </div>
     </div>

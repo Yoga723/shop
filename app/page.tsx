@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import "@/components/localbtn/style.css";
 import HorizontalSwiper from "@/components/Swiper/HorizontalSwiper";
-import ProductList from "@/public/data/products";
+import AllProducts from "@/public/data";
 import Link from "next/link";
-// import HorizontalSwiper from "@/components/Swiper/HorizontalSwiper";
 
 export default function Home() {
-  const products = ProductList;
+  // const products = AllProducts;
 
   return (
     <>
@@ -34,7 +33,7 @@ export default function Home() {
           <div
             className="container"
             style={{ border: "solid 1px black" }}>
-            {products.map((product, index) => (
+            {AllProducts.map((product, index) => (
               <div key={index}>
                 <Link href={`/produk/${product.id}`}>
                   {" "}
