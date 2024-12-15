@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import "@/components/localbtn/style.css";
 import ProductCard from "@/components/ProductCard";
+import { basePath } from "@/next.config";
 // import HorizontalSwiper from "@/components/Swiper/HorizontalSwiper";
 import AllProducts from "@/public/data";
 
@@ -289,7 +290,7 @@ export default function Home() {
           <div className="w-50 h-50 mb-4 object-fit-contain position-relative">
             <img
               alt="hero"
-              src="/shop/assets/img/hero.webp"
+              src={`${basePath}/assets/img/promo.webp`}
             />
           </div>
         </section>

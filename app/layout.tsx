@@ -66,7 +66,7 @@ const GlobalMetadata = () => (
     {/* Twitter Tag */}
     <meta
       name="twitter:card"
-      content="summary_large_image"
+      content={`${basePath}/assets/img/promo.webp`}
     />
     <meta
       name="twitter:site"
@@ -82,7 +82,7 @@ const GlobalMetadata = () => (
     />
     <meta
       name="twitter:image"
-      content="https://www.dialogika.co/assets/img/logo.webp"
+      content={`${basePath}/assets/img/promo.webp`}
     />
 
     {/* Favicon */}
