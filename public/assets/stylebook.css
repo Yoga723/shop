@@ -76,6 +76,10 @@ input[type="text"] {
   border-radius: 5px;
   font-size: 16px;
   width: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 .custom-input:focus {
@@ -88,9 +92,9 @@ input[type="text"] {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
 }
 
 .card:hover {
@@ -105,27 +109,6 @@ input[type="text"] {
   font-size: 12px;
   font-weight: 400;
   color: #7a7a7a;
-}
-
-.card-title {
-  font-size: 16px;
-  font-weight: 500;
-  margin-top: 5px;
-}
-
-.price-section {
-  margin-top: 10px;
-}
-
-.new-price {
-  font-size: 18px;
-  font-weight: 600;
-  color: #ff3e00;
-}
-
-.old-price {
-  font-size: 14px;
-  color: #b0b0b0;
 }
 
 .discount-badge {

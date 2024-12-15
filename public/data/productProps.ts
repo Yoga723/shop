@@ -17,7 +17,7 @@ export interface EBookProductProps extends BaseProductProps {
   author: string[]; // Contoh authornya ["penulis 1", "penulis 2"]
 }
 export function isEBook(product: ProductProps): product is EBookProductProps {
-  return product.category === "E-Book";
+  return product.category.toLowerCase() === "e-book";
 }
 
 export interface MerchandiseProductProps extends BaseProductProps {
@@ -25,7 +25,7 @@ export interface MerchandiseProductProps extends BaseProductProps {
   sizeOptions?: string[]; // ["S", "M", "L", "XL"]
 }
 export function isMerchandise(product: ProductProps): product is MerchandiseProductProps {
-  return product.category === "Merchandise";
+  return product.category.toLowerCase() === "merchandise";
 }
 
 export interface VideoProductProps extends BaseProductProps {
@@ -34,7 +34,7 @@ export interface VideoProductProps extends BaseProductProps {
 }
 
 export function isVideo(product: ProductProps): product is VideoProductProps {
-  return product.category === "Video";
+  return product.category.toLowerCase() === "video";
 }
 
 // Combine semua extends type props

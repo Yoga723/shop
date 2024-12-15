@@ -12,10 +12,10 @@
 @import "/shop/assets/vendor/remixicon/remixicon.css";
 @import "/shop/assets/vendor/swiper/swiper-bundle.css";
 @import "/shop/assets/vendor/international-phone-number/intlTelInput.css";
+@import "/shop/assets/css/icomoon.css";
 
 /* Main CSS */
 @import "/shop/assets/stylebook.css";
-
 /* Part CSS */
 @import "/shop/assets/part/shop/shop.css";
 

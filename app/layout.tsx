@@ -9,14 +9,17 @@ import Header from "@/components/Header";
 
 // Global metadata
 export const metadata: Metadata = {
-  title: "Shop | Dialogika",
-  description: "Beli E-book, Shop E-book",
-  keywords: "Beli E-book, Shop E-book",
+  title: "Shop | Dialogika - E-books, Merchandise, and More",
+  description:
+    "Temukan berbagai macam e-books, merchandise, motivational speeches, dan videos untuk menginspirasi pertumbuhan pribadimu. Belanja sekarang di Dialogika!",
+  keywords:
+    "beli  E-books, belanja E-books, motivational Merchandise, Dialogika Shop, Public Speaking Videos, Baju, Sepatu, pin",
 };
 
 // Helper function for metadata
 const GlobalMetadata = () => (
   <>
+    {/* General Metadata Tag */}
     <meta charSet="utf-8" />
     <meta
       name="viewport"
@@ -24,11 +27,78 @@ const GlobalMetadata = () => (
     />
     <meta
       name="description"
-      content="Beli E-book, Shop E-book"
+      content="Temukan berbagai macam e-books, merchandise, motivational speeches, dan videos untuk menginspirasi pertumbuhan pribadimu. Belanja sekarang di Dialogika!"
     />
     <meta
       name="keywords"
-      content="Beli E-book, Shop E-book"
+      content="beli E-books, belanja E-books, motivational Merchandise, Dialogika Shop, Public Speaking Videos, Baju, Sepatu, pin"
+    />
+
+    <meta
+      name="author"
+      content="Dialogika Team"
+    />
+    <meta
+      name="robots"
+      content="index, follow"
+    />
+    <meta
+      name="language"
+      content="id"
+    />
+    <meta
+      name="geo.region"
+      content="ID-YO"
+    />
+    <meta
+      name="geo.placename"
+      content="Yogyakarta, Indonesia"
+    />
+    <meta
+      name="geo.position"
+      content="-7.7956;110.3785"
+    />
+    <meta
+      name="ICBM"
+      content="-7.7552, 110.3785"
+    />
+
+    {/* Twitter Tag */}
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      name="twitter:site"
+      content="@dialogika_co"
+    />
+    <meta
+      name="twitter:title"
+      content="Shop at Dialogika - E-books, Merchandise, and More"
+    />
+    <meta
+      name="twitter:description"
+      content="Temukan berbagai macam e-books, merchandise, motivational speeches, dan videos untuk menginspirasi pertumbuhan pribadimu. Belanja sekarang di Dialogika!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.dialogika.co/assets/img/logo.webp"
+    />
+
+    {/* Favicon */}
+    <link
+      rel="icon"
+      href={`${basePath}/assets/img/favicon.ico`}
+    />
+    <link
+      rel="apple-touch-icon"
+      href={`${basePath}/assets/img/apple-touch-icon.png`}
+    />
+
+    {/* Canonical URL */}
+    <link
+      rel="canonical"
+      href="https://www.dialogika.co/shop/"
     />
 
     {/* Open Graph Tags */}
@@ -42,15 +112,15 @@ const GlobalMetadata = () => (
     />
     <meta
       property="og:title"
-      content="Shop E-book, Beli E-book"
+      content="Shop | Dialogika - E-books, Merchandise, and More"
     />
     <meta
       property="og:description"
-      content="Beli E-book, Shop E-book"
+      content="Temukan berbagai macam e-books, merchandise, motivational speeches, dan videos untuk menginspirasi pertumbuhan pribadimu. Belanja sekarang di Dialogika!"
     />
     <meta
       property="og:image"
-      content="assets/img/hero-bg.webp"
+      content={`${basePath}/assets/img/logo.webp`}
     />
     <meta
       property="og:url"
@@ -101,10 +171,6 @@ const GlobalScripts = () => (
       defer
     />
     <Script
-      src={`${basePath}/assets/js/headerfooter.js`}
-      strategy="beforeInteractive"
-    />
-    <Script
       src={`${basePath}/assets/js/main.js`}
       defer
     />
@@ -151,7 +217,7 @@ export default function RootLayout({
         <GlobalFonts />
       </Head>
       <body className="antialiased">
-        <main style={{ marginTop: "100px" }}>
+        <main>
           <Header />
           {children}
           <Footer />
