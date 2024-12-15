@@ -6,7 +6,7 @@ const EbookProducts: EBookProductProps[] = [
   // E-book Ten Thousand Skies Above You
   {
     id: "Ten-Thousand-Skies-Above-You",
-    title: "Ten Thousand Skies Above You",
+    title: "Ten Thousand Skies Above You lorem, testing asdj",
     price: 100000,
     createdData: "2024-12-11",
     category: "E-book",

@@ -30,8 +30,8 @@ const ProductCard = ({ AllProducts }: ProductCardProps) => {
             {/* Start of Card Details */}
             <div className={`card-body d-flex flex-column align-items-start text-start flex-grow-1 `}>
               <h5
-                className="mt-1 truncate-2-lines text-black fw-normal lh-base fs-6"
-                style={{ cursor: "pointer" }}>
+                className="mt-1 overflow-y-hidden d-inline-block text-black fw-normal lh-base fs-6"
+                style={{ cursor: "pointer", maxHeight:50 }}>
                 {item.title}
               </h5>
 

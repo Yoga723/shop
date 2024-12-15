@@ -66,7 +66,7 @@ const GlobalMetadata = () => (
     {/* Twitter Tag */}
     <meta
       name="twitter:card"
-      content={`https://yoga723.github.io/shop/assets/img/promo.webp`}
+      content={`${basePath}/assets/img/promo.webp`}
     />
     <meta
       name="twitter:site"
@@ -82,17 +82,17 @@ const GlobalMetadata = () => (
     />
     <meta
       name="twitter:image"
-      content={`https://yoga723.github.io/shop/assets/img/promo.webp`}
+      content="https://www.dialogika.co/shop/assets/img/promo.webp"
     />
 
     {/* Favicon */}
     <link
       rel="icon"
-      href={`https://yoga723.github.io/shop/assets/img/favicon.ico`}
+      href={`${basePath}/assets/img/favicon.ico`}
     />
     <link
       rel="apple-touch-icon"
-      href={`https://yoga723.github.io/shop/assets/img/apple-touch-icon.png`}
+      href={`${basePath}/assets/img/apple-touch-icon.png`}
     />
 
     {/* Canonical URL */}
@@ -120,7 +120,7 @@ const GlobalMetadata = () => (
     />
     <meta
       property="og:image"
-      content={`https://yoga723.github.io/shop/assets/img/logo.webp`}
+      content={`${basePath}/assets/img/promo.webp`}
     />
     <meta
       property="og:url"

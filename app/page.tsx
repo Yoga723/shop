@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import HorizontalSwiper from "@/components/HorizontalSwiper";
 import "@/components/localbtn/style.css";
 import ProductCard from "@/components/ProductCard";
 import { basePath } from "@/next.config";
@@ -275,7 +276,7 @@ export default function Home() {
         {/*  End of product card section */}
 
         <section className="section w-100 d-flex justify-content-center align-items-center flex-column">
-        
+          <HorizontalSwiper />
           <button
             id="testBtn"
             className="btn btn-primary">
