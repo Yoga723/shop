@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Script from "next/script";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -8,8 +8,18 @@ import "swiper/css/pagination";
 import { SwiperSlide, Swiper } from "swiper/react";
 
 const HorizontalSwiper = () => {
+  const [clickable, setClickable] = useState(false);
+  useEffect(() => {
+    console.log("Hello World, you just click it!");
+  }, [clickable]);
+
   return (
     <div className="swiper mb-5 flex flex-col">
+      <button
+        type="button"
+        onClick={() => setClickable(!clickable)}>
+        Click me
+      </button>
       <Swiper
         spaceBetween={50}
         slidesPerView={3}
