@@ -3,7 +3,6 @@ import HorizontalSwiper from "@/components/HorizontalSwiper";
 import "@/components/localbtn/style.css";
 import ProductCard from "@/components/ProductCard";
 import { basePath } from "@/next.config";
-// import HorizontalSwiper from "@/components/Swiper/HorizontalSwiper";
 import AllProducts from "@/public/data";
 
 export default function Home() {
@@ -256,6 +255,8 @@ export default function Home() {
           </div>
         </section>
 
+        <HorizontalSwiper />
+
         {/*  Start of product card section */}
         <section
           id="shop-product"
@@ -276,7 +277,7 @@ export default function Home() {
         {/*  End of product card section */}
 
         <section className="section w-100 d-flex justify-content-center align-items-center flex-column">
-          <HorizontalSwiper />
+          {/* <HorizontalSwiper /> */}
           <button
             id="testBtn"
             className="btn btn-primary">

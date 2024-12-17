@@ -88,11 +88,11 @@ const GlobalMetadata = () => (
     {/* Favicon */}
     <link
       rel="icon"
-      href={`${basePath}/assets/img/favicon.ico`}
+      href={`${basePath}/assets/img/favicon.webp`}
     />
     <link
       rel="apple-touch-icon"
-      href={`${basePath}/assets/img/apple-touch-icon.png`}
+      href={`${basePath}/assets/img/apple-touch-icon.webp`}
     />
 
     {/* Canonical URL */}
