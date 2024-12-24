@@ -175,10 +175,6 @@ const GlobalScripts = () => (
       defer
     />
     <Script
-      src={`${basePath}/assets/js/index.min.js`}
-      defer
-    />
-    <Script
       src={`${basePath}/assets/js/cart.js`}
       defer
     />
@@ -190,10 +186,6 @@ const GlobalScripts = () => (
     />
     <Script
       src={`${basePath}/assets/vendor/glightbox/js/glightbox.min.js`}
-      defer
-    />
-    <Script
-      src={`${basePath}/assets/vendor/swiper/swiper-bundle.min.js`}
       defer
     />
 

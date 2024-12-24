@@ -1,7 +1,6 @@
 import { EBookProductProps } from "./productProps";
 
-
-// Kategori E-book
+// Product untuk Kategori E-book
 const EbookProducts: EBookProductProps[] = [
   // E-book Ten Thousand Skies Above You
   {

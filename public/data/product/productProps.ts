@@ -3,6 +3,7 @@ export interface BaseProductProps {
   id: string;
   title: string;
   price: number;
+  quantity?: number; //Jumlah barang yang di pesan/didalam cart
   createdData: string;
   category: string; // "E-Book" atau "Merchandise" atau "Video"
   deskripsi: string;

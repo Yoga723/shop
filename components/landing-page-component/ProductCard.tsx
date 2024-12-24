@@ -1,4 +1,7 @@
-import { ProductProps } from "@/public/data/productProps";
+"use client";
+
+import { addProductToCart } from "@/public/data/cartUtils";
+import { ProductProps } from "@/public/data/product/productProps";
 import Link from "next/link";
 import React from "react";
 
@@ -9,29 +12,30 @@ interface ProductCardProps {
 const ProductCard = ({ AllProducts }: ProductCardProps) => {
   return (
     <div
-      className="row justify-content-center gap-xl-3 gap-2 px-2"
+      className="row justify-content-center gap-md-4"
       id="productArea">
+      {/* Buat product card sesuai dengan isi AllProducts */}
       {AllProducts.map((item, index) => (
         // Start of Cards
         <div
           key={index}
-          className="col-lg-2 card col-6 h-100 d-flex flex-column p-2 overflow-hidden justify-content-between"
+          className="col-lg-2 col-md-3 col-sm-6 col-6 card d-flex flex-column p-0 overflow-hidden justify-content-between"
           id={item.id}
           style={{ minHeight: 450 }}>
           <Link
-            href={`produk/${item.id}`}
+            href={`product/${item.id}`}
             className="w-100">
             <img
               src={`${item.gambar[0].src}`} // ambil gambar pertama didalam array gambar
               alt={`${item.gambar[0].title}`}
               className="object-fit-cover w-100"
-              style={{ minHeight: 230, maxHeight: 230 }}
+              style={{ minHeight: 260, maxHeight: 260 }}
             />
             {/* Start of Card Details */}
             <div className={`card-body d-flex flex-column align-items-start text-start flex-grow-1 `}>
               <h5
                 className="mt-1 overflow-y-hidden d-inline-block text-black fw-normal lh-base fs-6"
-                style={{ cursor: "pointer", maxHeight:50 }}>
+                style={{ cursor: "pointer", maxHeight: 50 }}>
                 {item.title}
               </h5>
 
@@ -42,17 +46,22 @@ const ProductCard = ({ AllProducts }: ProductCardProps) => {
                     width="14"
                     height="14"
                     src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/50/228BE6/external-E-book-literature-smashingstocks-glyph-smashing-stocks.png"
-                    alt="icon e-book"
+                    alt="icon"
                   />
                 ) : item.category.toLowerCase() === "merchandise" ? (
                   <img
                     width="14"
                     height="14"
                     src="https://img.icons8.com/ios-filled/50/228BE6/handle-with-care.png"
-                    alt="icon merchandise"
+                    alt="icon"
                   />
                 ) : item.category.toLowerCase() === "video" ? (
-                  <img width="14" height="14" src="https://img.icons8.com/ios-filled/50/228be6/circled-play.png" alt="icon video"/>
+                  <img
+                    width="14"
+                    height="14"
+                    src="https://img.icons8.com/ios-filled/50/228be6/circled-play.png"
+                    alt="icon"
+                  />
                 ) : (
                   ""
                 )}
@@ -77,7 +86,8 @@ const ProductCard = ({ AllProducts }: ProductCardProps) => {
           </Link>
           <button
             type="button"
-            className="blue-modern-dialogika-btn rounded py-2 px-3 px-xl-4  text-white border-0">
+            onClick={() => addProductToCart(item)}
+            className="blue-modern-dialogika-btn rounded py-2 px-3 px-xl-4 m-2  text-white border-0">
             Add To Cart
           </button>
         </div>
