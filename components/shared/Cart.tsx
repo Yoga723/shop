@@ -1,24 +1,25 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-// import { ProductProps } from "@/out/data/products";
-import { ProductProps } from "@/public/data/product/productProps";
-import { getCartFromLocal, removeFromCart } from "@/public/data/cartUtils";
+import { removeFromCart } from "@/public/data/cartUtils";
+import useCart from "@/app/state/cartUtils";
 
 const CartSidebar = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState<ProductProps[]>([]);
+  const getLocalCartData = useCart((state) => state.getLocalCartData);
+  const cartData = useCart((state) => state.cartData);
   const [customerName, setCustomerName] = useState("");
   const [whatsappNumber, setWhatsappNumber] = useState("");
   const [email, setEmail] = useState("");
 
   const toggleCart = () => setIsCartOpen(!isCartOpen);
+
   useEffect(() => {
-    setCartItems(getCartFromLocal());
+    getLocalCartData();
   }, []);
 
   // bila quantity undefined maka fallback jadi 1 valuenya. Intinya default value quantity = 1
-  const total = cartItems.reduce((acc, item) => acc + item.price * (item.quantity ?? 1), 0);
+  const total = cartData.reduce((acc, item) => acc + item.price * (item.quantity ?? 1), 0);
 
   return (
     <>
@@ -43,11 +44,11 @@ const CartSidebar = () => {
             style={{ marginRight: "8px" }}>
             <path d="M200-80q-33 0-56.5-23.5T120-160v-480q0-33 23.5-56.5T200-720h80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720h80q33 0 56.5 23.5T840-640v480q0 33-23.5 56.5T760-80H200Zm0-80h560v-480H200v480Zm280-240q83 0 141.5-58.5T680-600h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85h-80q0 83 58.5 141.5T480-400ZM360-720h240q0-50-35-85t-85-35q-50 0-85 35t-35 85ZM200-160v-480 480Z" />
           </svg>
-          {cartItems.length > 0 && (
+          {cartData.length > 0 && (
             <div
               id="iconnumber"
               className="d-inline-block bg-danger text-white rounded-circle">
-              {cartItems.length}
+              {cartData.length}
             </div>
           )}
         </button>
@@ -76,7 +77,7 @@ const CartSidebar = () => {
             className="cart-items mt-3 mb-3"
             style={{ flexGrow: 1, overflowY: "auto" }}>
             <ul className="list-group">
-              {cartItems.map((item) => (
+              {cartData.map((item) => (
                 <li
                   key={item.id}
                   className="list-group-item d-flex flex-column">
@@ -200,7 +201,7 @@ const CartSidebar = () => {
                 </p>
               </div>
               <ul>
-                {cartItems.map((item) => (
+                {cartData.map((item) => (
                   <li
                     key={item.id}
                     className="d-flex align-items-center">

@@ -5,18 +5,19 @@ import Image from "next/image";
 import "./style.css";
 import { generatePaths } from "@/lib/generateStaticPaths";
 import { Metadata } from "next";
-import CartSidebar from "@/components/Cart";
+import CartSidebar from "@/components/shared/Cart";
+import AddtoCartBtn from "@/components/shared/AddtoCartBtn";
 
 export const metadata: Metadata = {
   title: "Product Details",
 };
 
-export default async function Page({ params }: any) {
+export default async function Page({ params }: { params: { id: string } }) {
   const { id } = await params;
-  const product = await AllProducts.find((item: ProductProps) => item.id.toString() === id);
-  console.log(AllProducts);
+  // Find the product based on the ID from params
+  const product = AllProducts.find((item: ProductProps) => item.id.toString() === id);
 
-  // Tampilkan ini jika id product tidak ada
+  // Show an error page if the product is not found
   if (!product) {
     return (
       <main className="section min-vh-100 pt-5">
@@ -24,6 +25,7 @@ export default async function Page({ params }: any) {
       </main>
     );
   }
+
   return (
     <>
       <main className="section min-vh-100">
@@ -41,8 +43,8 @@ export default async function Page({ params }: any) {
               </figure>
               <h2>{product.title}</h2>
               {isMerchandise(product) && <div>{product.stock}</div>}
-              {/* <p>{product.availableFormat?.join(" ")}</p> */}
               <div dangerouslySetInnerHTML={{ __html: product.deskripsi }} />
+              <AddtoCartBtn {...product} />
             </section>
             {/* End of Gambar Product */}
           </article>
@@ -53,10 +55,9 @@ export default async function Page({ params }: any) {
   );
 }
 
-// Fungsi ini diperlukan untuk setiap dynamic page untuk saat proses build nantinya.
-// dynamic page adalah folder yang menggunakan []. Seperti /product/[id]
+// Dynamic page generation during build
 export async function generateStaticParams() {
-  const path = await generatePaths(AllProducts, "id");
-  console.log("Ini paths : ", path);
-  return generatePaths(AllProducts, "id");
+  const paths = generatePaths(AllProducts, "id");
+  console.log("Generated paths: ", paths);
+  return paths;
 }

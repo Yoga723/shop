@@ -2,7 +2,6 @@
 
 import { ProductProps } from "./product/productProps";
 
-let cartState: ProductProps[] = [];
 
 // Function untuk ambil cart data dari local storage. Bila tidak ada kirim array[] kosong
 export const getCartFromLocal = (): ProductProps[] => {
