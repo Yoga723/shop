@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Product Details",
 };
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }: any) {
   const { id } = await params;
   // Find the product based on the ID from params
   const product = AllProducts.find((item: ProductProps) => item.id.toString() === id);
