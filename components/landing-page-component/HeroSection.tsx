@@ -14,6 +14,7 @@ interface HeroContentProps {
 }
 
 const HeroSection = () => {
+  // ( max Featured - 3)
   const HeroContent: HeroContentProps[] = [
     {
       id: 1,
@@ -43,7 +44,7 @@ const HeroSection = () => {
       <div className="container d-xl-flex align-items-start">
         <div className="hero_about col-xl-6">
           <div className="hero_header">
-            <h1 className="hero_header-title">Check Our New Books</h1>
+            <h1 className="hero_header-title">Check E-Book Terbaru</h1>
             <p className="hero_header-text">
               Temukan buku-buku terbaik untuk mengasah kemampuan public speaking Anda di Dialogika. Kami siap membantu
               Anda menjadi seorang pembicara yang percaya diri, menginspirasi, dan mempengaruhi dunia. Mulailah
@@ -56,7 +57,7 @@ const HeroSection = () => {
             </a>
           </div>
           <div className="hero_contacts">
-            <p className="hero_contacts-text">Our support team is available 24/7 to resolve any product issues</p>
+            <p className="hero_contacts-text">Tim customer service kami tersedia 24/7 untuk menyelesaikan masalah produk apa pun.</p>
             <span className="hero_contacts-data d-flex flex-column flex-sm-row align-items-center">
               <span className="icon d-flex align-items-center justify-content-center">
                 <i className="icon-call"></i>

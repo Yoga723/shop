@@ -11,9 +11,8 @@ export default function Home() {
     <>
       <main className="main">
       <CartSidebar />
-        {/*  Hero section start ( max Featured - 3)*/}
+        {/*  Hero section ( max Featured - 3)*/}
         <HeroSection />
-        {/*  Hero section end */}
 
         {/* Benefit Section */}
         <BenefitSection />
@@ -26,8 +25,9 @@ export default function Home() {
             className="section-title section-title--center"
             id="productAreaTitle"
             style={{ margin: 0, padding: 0 }}>
-            Katalog
-            <span className="section-title__highlight"> Buku</span>
+            Explore
+            <span className="section-title__highlight"> Produk </span>
+            Kami
           </h2>
           <div className="underline"></div>
 
@@ -35,9 +35,6 @@ export default function Home() {
             <ProductCard AllProducts={AllProducts} />
           </div>
         </section>
-
-
-
 
 
         {/*  End of product card section */}

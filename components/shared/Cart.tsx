@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { removeFromCart } from "@/public/data/cartUtils";
 import useCart from "@/app/state/cartUtils";
 
 const CartSidebar = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const getLocalCartData = useCart((state) => state.getLocalCartData);
+  const updateQuantity = useCart((state) => state.updateQuantity);
+  const removeFromCart = useCart((state) => state.removeFromCart);
+  const confirmCheckout = useCart((state) => state.confirmCheckout);
   const cartData = useCart((state) => state.cartData);
-  const [customerName, setCustomerName] = useState("");
-  const [whatsappNumber, setWhatsappNumber] = useState("");
-  const [email, setEmail] = useState("");
+  const [customerDetails, setcustomerDetails] = useState({ name: "", whatsappNumber: 0, email: "" });
 
   const toggleCart = () => setIsCartOpen(!isCartOpen);
 
@@ -62,7 +62,7 @@ const CartSidebar = () => {
           className="p-4 d-flex flex-column"
           style={{ height: "100vh", overflowY: "auto" }}>
           <div
-            className="d-flex justify-content-between align-items-center mb-4"
+            className="d-flex justify-content-between align-items-center mb-2"
             style={{ position: "relative" }}>
             <h4>Your Cart</h4>
             <button
@@ -74,20 +74,25 @@ const CartSidebar = () => {
 
           {/* Cart Items */}
           <div
-            className="cart-items mt-3 mb-3"
+            className="cart-items my-1 py-2"
             style={{ flexGrow: 1, overflowY: "auto" }}>
-            <ul className="list-group">
+            <ul className="list-group pe-2 gap-2">
               {cartData.map((item) => (
                 <li
                   key={item.id}
                   className="list-group-item d-flex flex-column">
                   <div className="d-flex justify-content-between align-items-center gap-3">
                     <span>{item.title}</span>
-                    {/* <span>Rp{(item.price * item.quantity).toLocaleString()}</span> */}
+                    <span>Rp{(item.price * (item.quantity || 1)).toLocaleString()}</span>
                   </div>
                   <div className="d-flex align-items-center justify-content-between my-2">
                     <div className="d-flex align-items-center border border-gray-300 rounded-lg overflow-hidden">
-                      <button className="btn btn-light">-</button>
+                      <button
+                        type="button"
+                        className="btn btn-light"
+                        onClick={() => updateQuantity(item, "decrement")}>
+                        -
+                      </button>
                       <input
                         type="text"
                         value={item.quantity}
@@ -95,11 +100,16 @@ const CartSidebar = () => {
                         className="form-control text-center"
                         style={{ width: "50px", marginBottom: "0px" }}
                       />
-                      <button className="btn btn-light">+</button>
+                      <button
+                        className="btn btn-light"
+                        type="button"
+                        onClick={() => updateQuantity(item, "increment")}>
+                        +
+                      </button>
                     </div>
                     <button
                       className="btn btn-danger"
-                      onClick={() => removeFromCart(item.id)}>
+                      onClick={() => removeFromCart(item)}>
                       Hapus
                     </button>
                   </div>
@@ -110,19 +120,19 @@ const CartSidebar = () => {
 
           {/* Checkout Form */}
           <div className="mt-4">
-            <h5>Checkout Details</h5>
+            {/* <h5>Checkout Details</h5> */}
             <div className="mb-3">
               <label
                 htmlFor="name"
                 className="form-label custom-label">
-                Name
+                Nama
               </label>
               <input
                 type="text"
                 className="form-control custom-input"
-                id="name"
-                value={customerName}
-                onChange={(e) => setCustomerName(e.target.value)}
+                id="customerName"
+                value={customerDetails.name}
+                onChange={(e) => setcustomerDetails({ ...customerDetails, name: e.target.value })}
                 required
               />
             </div>
@@ -130,14 +140,14 @@ const CartSidebar = () => {
               <label
                 htmlFor="whatsapp"
                 className="form-label custom-label">
-                WhatsApp Number
+                Nomor Whastapp
               </label>
               <input
                 type="text"
                 className="form-control custom-input"
-                id="whatsapp"
-                value={whatsappNumber}
-                onChange={(e) => setWhatsappNumber(e.target.value)}
+                id="customerNumber"
+                value={customerDetails.whatsappNumber}
+                onChange={(e) => setcustomerDetails({ ...customerDetails, whatsappNumber: Number(e.target.value) })}
                 required
               />
             </div>
@@ -150,9 +160,9 @@ const CartSidebar = () => {
               <input
                 type="email"
                 className="form-control custom-input"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                id="customerEmail"
+                value={customerDetails.email}
+                onChange={(e) => setcustomerDetails({ ...customerDetails, email: e.target.value })}
                 required
               />
             </div>
@@ -190,15 +200,9 @@ const CartSidebar = () => {
             <div className="modal-body">
               <p>Please confirm your order details:</p>
               <div className="mb-3">
-                <p>
-                  <strong>Name:</strong> {customerName}
-                </p>
-                <p>
-                  <strong>Email:</strong> {email}
-                </p>
-                <p>
-                  <strong>WhatsApp:</strong> {whatsappNumber}
-                </p>
+                <p>Nama: {customerDetails.name}</p>
+                <p>WhatsApp: {customerDetails.whatsappNumber}</p>
+                <p>Email: {customerDetails.email}</p>
               </div>
               <ul>
                 {cartData.map((item) => (
@@ -208,12 +212,12 @@ const CartSidebar = () => {
                     <img
                       src={item.gambar[0].src}
                       alt={item.gambar[0].title}
-                      className="img-thumbnail me-3"
-                      style={{ width: "50px", height: "75px" }}
+                      className="img-thumbnail me-3 p-0"
+                      style={{ width: "70px", height: "75px" }}
                     />
                     <div>
                       <p>
-                        {item.title} - {item.quantity} pcs
+                        {item.title} - <b>{item.quantity} pcs</b>
                       </p>
                       {!item.quantity ? (
                         <p className="text-muted">Rp{item.price.toLocaleString()}</p>
@@ -224,7 +228,7 @@ const CartSidebar = () => {
                   </li>
                 ))}
               </ul>
-              <p>Total: Rp.{total}</p>
+              <p className="fw-bold">Total: Rp.{total.toLocaleString()}</p>
             </div>
             <div className="modal-footer">
               <button
@@ -235,6 +239,7 @@ const CartSidebar = () => {
               </button>
               <button
                 type="button"
+                onClick={() => confirmCheckout(customerDetails)}
                 className="btn btn-primary">
                 Confirm
               </button>

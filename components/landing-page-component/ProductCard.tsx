@@ -15,7 +15,7 @@ const ProductCard = ({ AllProducts }: ProductCardProps) => {
 
   return (
     <div
-      className="row justify-content-center gap-md-4"
+      className="row justify-content-center gap-md-3"
       id="productArea">
       {/* Buat product card sesuai dengan isi AllProducts */}
       {AllProducts.map((item, index) => {
@@ -23,7 +23,7 @@ const ProductCard = ({ AllProducts }: ProductCardProps) => {
           // Start of Cards
           <div
             key={index}
-            className="col-lg-2 col-md-3 col-sm-6 col-6 card d-flex flex-column p-0 overflow-hidden justify-content-between"
+            className="col-lg-2 col-md-3 col-5 m-1 card d-flex flex-column p-0 overflow-hidden justify-content-between"
             id={item.id}
             style={{ minHeight: 450 }}>
             <Link
@@ -33,7 +33,7 @@ const ProductCard = ({ AllProducts }: ProductCardProps) => {
                 src={`${item.gambar[0].src}`} // ambil gambar pertama didalam array gambar
                 alt={`${item.gambar[0].title}`}
                 className="object-fit-cover w-100"
-                style={{ minHeight: 260, maxHeight: 260 }}
+                style={{ minHeight: 250, maxHeight: 250 }}
               />
               {/* Start of Card Details */}
               <div className={`card-body d-flex flex-column align-items-start text-start flex-grow-1 `}>
@@ -74,17 +74,19 @@ const ProductCard = ({ AllProducts }: ProductCardProps) => {
                 {/* End of Category & Icon Section */}
 
                 {/* Price Section */}
-                <div className="mt-1 d-flex flex-column flex-xl-col">
-                  <p className="text-black fs-6 fw-bold order-1 mb-0">Rp.{item.price.toLocaleString()}</p>
+                <div className="mt-1 d-flex flex-row gap-2 justify-content-center align-items-center">
+                  <p className="text-black fs-6 fw-bold mb-0 w-auto">Rp.{item.price.toLocaleString()}</p>
+                  {/* Tampilkan harga sebelum diskon bila ada */}
                   {item.discountValue && item.discountValue > 1 && (
                     <p
-                      className="text-secondary fw-light fa-md-xs order-2"
+                      className="text-secondary fw-bold mb-0 w-auto"
                       style={{ fontSize: "0.7rem" }}>
                       <del>Rp. {(item.price + item.discountValue).toLocaleString()}</del>
                       <span className="text-danger mx-1 fw-bold">{item.discountPercentage?.toLocaleString()}%</span>
                     </p>
                   )}
                 </div>
+                {/* End of Price Section */}
               </div>
               {/* End of Card Details */}
             </Link>

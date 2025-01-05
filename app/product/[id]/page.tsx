@@ -1,12 +1,12 @@
 import React from "react";
 import AllProducts from "@/public/data/product";
 import { isMerchandise, ProductProps } from "@/public/data/product/productProps";
-import Image from "next/image";
 import "./style.css";
 import { generatePaths } from "@/lib/generateStaticPaths";
 import { Metadata } from "next";
 import CartSidebar from "@/components/shared/Cart";
 import AddtoCartBtn from "@/components/shared/AddtoCartBtn";
+import ProductImages from "@/components/product-page-component/ProductImages";
 
 export const metadata: Metadata = {
   title: "Product Details",
@@ -29,23 +29,21 @@ export default async function Page({ params }: any) {
   return (
     <>
       <main className="section min-vh-100">
-        <section>
+        <section
+          className="section"
+          style={{ marginTop: 150 }}>
           <article className="container">
             {/* Start of Gambar Product */}
-            <section className="section col">
-              <figure className="overflow-hidden product-img position-relative">
-                <Image
-                  fill
-                  objectFit="contain"
-                  src={`${product.gambar[0].src}`}
-                  alt={`${product.gambar[0].title}`}
-                />
-              </figure>
-              <h2>{product.title}</h2>
+
+            <ProductImages imgArray={product.gambar} />
+
+            {/* Product Description */}
+            <div>
+              <h1>{product.title}</h1>
               {isMerchandise(product) && <div>{product.stock}</div>}
               <div dangerouslySetInnerHTML={{ __html: product.deskripsi }} />
               <AddtoCartBtn {...product} />
-            </section>
+            </div>
             {/* End of Gambar Product */}
           </article>
           <CartSidebar />

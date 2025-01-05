@@ -1,14 +1,38 @@
 "use client";
 import { basePath } from "@/next.config";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Header = () => {
+  const [showTopbar, setShowTopbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY) {
+      // Scrolling down
+      setShowTopbar(false);
+    } else {
+      // Scrolling up
+      setShowTopbar(true);
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
     <>
       <div
         id="topbar"
-        className="d-flex align-items-center fixed-top">
+        className={`d-flex align-items-center fixed-top ${showTopbar ? "visible" : "hidden"}`}>
         <div className="container d-flex justify-content-between">
           <div className="contact-info d-flex align-items-center">
             <i className="bi bi-envelope"></i> <Link href="mailto:admin@dialogika.co">admin@dialogika.co</Link>
@@ -42,7 +66,7 @@ const Header = () => {
       {/*   <!-- ======= Header ======= --> */}
       <header
         id="header"
-        className="fixed-top">
+        className={`fixed-top ${showTopbar ? "with-topbar" : "no-topbar"}`}>
         <div className="container d-flex align-items-center">
           <Link
             href="../index.html"

@@ -171,11 +171,11 @@ const Footer = () => {
                   data-bs-parent=".footer-links">
                   <li>
                     <i className="bx bx-chevron-right"></i>
-                    <a href="../program/kids-plus.html">Online className</a>
+                    <a href="../program/kids-plus.html">Online class</a>
                   </li>
                   <li>
                     <i className="bx bx-chevron-right"></i>
-                    <a href="../program/first-kids.html">Offline className</a>
+                    <a href="../program/first-kids.html">Offline class</a>
                   </li>
                 </ul>
               </div>
@@ -385,7 +385,7 @@ const Footer = () => {
                   type="tel"
                   name="Surel"
                   className="custom-input-footer"
-                  placeholder="Join Our className Group"
+                  placeholder="Join Our Class Group"
                   disabled
                 />
                 <button

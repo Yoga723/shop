@@ -72,9 +72,9 @@ input[type="text"] {
 
 .custom-input {
   border: 2px solid #ccc;
-  padding: 10px;
+  padding: 5px 10px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   width: 100%;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -89,12 +89,21 @@ input[type="text"] {
 
 /* Card Component Styling */
 .card {
-  border-radius: 10px;
+  border-radius: 0px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
-  /* display: flex;
+  /*display: flex;
   flex-direction: column;
-  justify-content: space-between; */
+  justify-content: space-between;
+  */
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  -webkit-transition: transform 0.2s ease-in-out;
+  -moz-transition: transform 0.2s ease-in-out;
+  -ms-transition: transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
 }
 
 .card:hover {

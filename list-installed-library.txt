@@ -1,3 +1,4 @@
 Installed library with node.
 1. Swiper JS
-2. 
+2. Zustand
+3. 

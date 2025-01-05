@@ -4,8 +4,8 @@ import Script from "next/script";
 import "./globals.css";
 import Head from "next/head";
 import { basePath } from "@/next.config";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Footer from "@/components/shared/Footer";
+import Header from "@/components/shared/Header";
 
 // Global metadata
 export const metadata: Metadata = {
@@ -182,6 +182,14 @@ const GlobalScripts = () => (
     {/* Vendor JS */}
     <Script
       src={`${basePath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js`}
+      defer
+    />
+    <Script
+      src={`${basePath}/assets/vendor/international-phone-number/intlTelInput.min.js`}
+      defer
+    />
+    <Script
+      src={`${basePath}/assets/vendor/international-phone-number/script.js`}
       defer
     />
     <Script
