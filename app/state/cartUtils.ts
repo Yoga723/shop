@@ -78,7 +78,7 @@ const useCart = create<CartState>((set) => ({
       }
       const total = state.cartData.reduce((acc, item) => acc + item.price * (item.quantity ?? 1), 0);
 
-      let message = `Halo kaak!! 👋%0AAku ${customerDetails.name} mau pesan buku-buku ini :%0A %0A`;
+      let message = `Halo kaak!! 👋%0AAku ${customerDetails.name} mau pesan produk-produk ini :%0A %0A`;
 
       state.cartData.forEach((item) => {
         message += `- ${item.title}%0AQuantity: ${item.quantity}%0APrice: Rp${
