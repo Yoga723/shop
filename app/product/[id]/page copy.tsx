@@ -31,36 +31,21 @@ export default async function Page({ params }: any) {
       <main className="section min-vh-100">
         <section
           className="section"
-          style={{ marginTop: 200 }}>
+          style={{ marginTop: 150 }}>
           <article className="container">
-            <div className="row">
-              <div className="col-12 col-md-3">
-                <div>
-                   {/* Start of Gambar Product */}
+            {/* Start of Gambar Product */}
 
-                  <ProductImages imgArray={product.gambar} />
-                </div>
-              </div>
-              <div className="col-12 col-md-9">
-                {/* Product Description */}
-                <div>
-                  <h1>{product.title}</h1>
-                   <h3>{product.price}</h3>
-                  {isMerchandise(product) && <div>{product.stock}</div>}
-                  <div dangerouslySetInnerHTML={{ __html: product.deskripsi }} />
-                  <div>
-                 
-                  </div>
-                  <AddtoCartBtn {...product} />
-                </div>
-                {/* End of Gambar Product */}
-              </div>
-              <div>
-               
-              </div>
+            <ProductImages imgArray={product.gambar} />
+
+            {/* Product Description */}
+            <div>
+              <h1>{product.title}</h1>
+              {isMerchandise(product) && <div>{product.stock}</div>}
+              <div dangerouslySetInnerHTML={{ __html: product.deskripsi }} />
+              <AddtoCartBtn {...product} />
             </div>
+            {/* End of Gambar Product */}
           </article>
-          
           <CartSidebar />
         </section>
       </main>
