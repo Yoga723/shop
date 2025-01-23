@@ -9,7 +9,7 @@ const AddtoCartBtn = (item: ProductProps) => {
     <button
       type="button"
       onClick={() => addToCart(item)}
-      className="blue-modern-dialogika-btn rounded py-2 px-3 px-xl-4 m-2  text-white border-0">
+      className="blue-modern-dialogika-btn rounded px-1 py-2 px-xl-3  text-white border-0">
       Add To Cart
     </button>
   );

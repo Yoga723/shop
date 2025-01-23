@@ -8,6 +8,9 @@ import CartSidebar from "@/components/shared/Cart";
 import AddtoCartBtn from "@/components/shared/AddtoCartBtn";
 import ProductImages from "@/components/product-page-component/ProductImages";
 
+
+
+
 export const metadata: Metadata = {
   title: "Product Details",
 };
@@ -39,24 +42,51 @@ export default async function Page({ params }: any) {
                    {/* Start of Gambar Product */}
 
                   <ProductImages imgArray={product.gambar} />
+                  
                 </div>
               </div>
-              <div className="col-12 col-md-9">
+              <div className="col-12 col-md-6">
                 {/* Product Description */}
                 <div>
-                  <h1>{product.title}</h1>
-                   <h3>{product.price}</h3>
+                  <h1><b>{product.title}</b></h1>
+                  <h2>Rp{product.price}</h2>
+                  <div>
+                      {/* Tampilkan harga sebelum diskon bila ada */}
+                      {product.discountValue && product.discountValue > 1 && (
+                        <p
+                        className="text-secondary fw-bold mb-0 w-auto"
+                        >
+                        <del>Rp. {(product.price + product.discountValue).toLocaleString()}</del>
+                        <span className="text-danger mx-1 fw-bold">{product.discountPercentage?.toLocaleString()}%</span>
+                      </p>
+                      )
+
+                      }
+                  </div>
+                    
+                
                   {isMerchandise(product) && <div>{product.stock}</div>}
                   <div dangerouslySetInnerHTML={{ __html: product.deskripsi }} />
                   <div>
                  
                   </div>
-                  <AddtoCartBtn {...product} />
+                 
                 </div>
                 {/* End of Gambar Product */}
               </div>
-              <div>
-               
+              <div className="col-12 col-md-3">
+                <div className="roundedBorder">
+                  <h4><b>Atur jumlah dan catatan</b></h4>
+                  <p>{product.title}</p>
+                  <p>{product.price}</p>
+                  <div className="button-group">
+
+                    <button className="border border-1 border-primary  rounded me-2 px-5 py-1 text-black ">Buy</button>
+                    
+                    <AddtoCartBtn {...product} />
+                  </div>
+                </div>
+  
               </div>
             </div>
           </article>
