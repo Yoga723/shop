@@ -81,7 +81,7 @@ export default async function Page({ params }: any) {
                   <p>{product.price}</p>
                   <div className="button-group">
 
-                    <button className="border border-1 border-primary  rounded me-2 px-5 py-1 text-black ">Buy</button>
+                    <button className="border border-1 border-primary  rounded me-2 px-4  text-black ">Buy</button>
                     
                     <AddtoCartBtn {...product} />
                   </div>
