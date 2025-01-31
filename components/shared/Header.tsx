@@ -69,7 +69,7 @@ const Header = () => {
         className={`fixed-top ${showTopbar ? "with-topbar" : "no-topbar"}`}>
         <div className="container d-flex align-items-center">
           <Link
-            href="../index.html"
+            href="https://www.dialogika.co"
             className="logo me-auto">
             <img
               src={`${basePath}/assets/img/logo.webp`}
@@ -85,46 +85,51 @@ const Header = () => {
               <li>
                 <Link
                   className="nav-link scrollto"
-                  href="index.html">
+                  href="https://www.dialogika.co">
                   Home
                 </Link>
               </li>
               <li className="dropdown">
-                <Link href="../program">
+                <Link href="https://www.dialogika.co/program/">
                   <span>Program</span> <i className="bi bi-chevron-down"></i>
                 </Link>
                 <ul>
                   <li className="dropdown">
-                    <button
-                      className="btn w-100 text-start"
-                      data-bs-toggle="dropdown"
+                    <a
+                      href="#"
                       aria-expanded="false">
                       <span>Online</span> <i className="bi bi-chevron-right"></i>
-                    </button>
+                    </a>
                     <ul>
                       <li>
-                        <Link href="https://www.dialogika.co/program/basic-play.html">
-                          Basic Play <span className="badge rounded-pill text-bg-success">Best Buy</span>
+                        <Link href="https://www.dialogika.co/program/basic-play.html">Basic Play</Link>
+                      </li>
+                      <li>
+                        <Link href="https://www.dialogika.co/program/basic-class.html">
+                          Basic Class <span className="badge rounded-pill text-bg-success">Best Buy</span>
                         </Link>
                       </li>
+                      <hr />
                       <li>
-                        <Link href="https://www.dialogika.co/program/basic-plus.html">Basic Plus</Link>
+                        <Link href="https://www.dialogika.co/program/kids-play.html">Kids Play</Link>
                       </li>
                       <li>
-                        <Link href="https://www.dialogika.co/program/basic-private.html">Basic Private</Link>
+                        <Link href="https://www.dialogika.co/program/kids-class.html">
+                          Kids Class <span className="badge rounded-pill text-bg-success">Best Buy</span>
+                        </Link>
                       </li>
                     </ul>
                   </li>
+
                   <li className="dropdown">
-                    <button
-                      className="btn w-100 text-start"
-                      data-bs-toggle="dropdown"
+                    <a
+                      href="#"
                       aria-expanded="false">
                       <span>Offline</span> <i className="bi bi-chevron-right"></i>
-                    </button>
+                    </a>
                     <ul>
                       <li>
-                        <Link href="https://www.dialogika.co/program/first-className.html">
+                        <Link href="https://www.dialogika.co/program/first-class.html">
                           First Class <span className="badge rounded-pill text-bg-success">Best Buy</span>
                         </Link>
                       </li>

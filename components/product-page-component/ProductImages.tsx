@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 
@@ -15,39 +15,30 @@ interface imgArrayProps {
 }
 
 const ProductImages = ({ imgArray }: imgArrayProps) => {
-  console.log("ini adalah imgArray: ", imgArray);
+
   const [activeIndex, setActiveIndex] = React.useState(0);
   const swiperRef = useRef<any>(null);
 
-  const handleThumbnailClick = (index: number) => {
-    setActiveIndex(index);
-    if (swiperRef.current) {
-      swiperRef.current.slideTo(index);
-    }
-  };
   
   return (
     <>
       
-      <figure className="overflow-hidden product-img position-relative">
-        
+      <figure className="overflow-hidden position-relative h-auto flex flex-column justify-content-center align-items-center">
         <Swiper 
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           slidesPerView={1}
           pagination={{clickable: true}}
-         
-          modules={[Pagination, Navigation]}
+          modules={[Navigation]}
           onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-          className="mySwiper"
+          className="productImageSwiper mx-auto"
           style={{ marginBottom: '20px' }}
           >
-          {/* Mapping array gambar*/}
           {imgArray.map((item) => (
           
 
               <SwiperSlide key={item.id} >
                 <img
-                className="object-fit-contain img-fluid"
+                className="object-fit-cover rounded img-fluid mx-auto d-block"
                 style={{ width: 350, height: 350 }}
                 src={imgArray[activeIndex].src}
                 alt={imgArray[activeIndex].title}
@@ -57,7 +48,7 @@ const ProductImages = ({ imgArray }: imgArrayProps) => {
           ))}
         </Swiper>
         {/* Thumbnail */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+        <div className="d-flex justify-content-center gap-3">
           {imgArray.map((item, index) => (
             <img
               key={item.id}
@@ -69,7 +60,7 @@ const ProductImages = ({ imgArray }: imgArrayProps) => {
                 height: 80,
                 objectFit: 'cover',
                 cursor: 'pointer',
-                border: index === activeIndex ? '2px solid blue' : '2px solid #ddd',
+                border: index === activeIndex ? '3px solid #114D95' : '2px solid #ddd',
                 borderRadius: '5px',
               }}
             />

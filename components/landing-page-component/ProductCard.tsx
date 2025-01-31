@@ -10,9 +10,6 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ AllProducts }: ProductCardProps) => {
-  // const addToCart = useCart((state) => state.addToCart);
-  // const cartData = useCart((state) => state.cartData);
-
   return (
     <div
       className="row justify-content-center gap-md-3"
@@ -23,7 +20,7 @@ const ProductCard = ({ AllProducts }: ProductCardProps) => {
           // Start of Cards
           <div
             key={index}
-            className="col-lg-2 col-md-3 col-5 m-1 card d-flex flex-column p-0 overflow-hidden justify-content-between"
+            className="col-lg-2 col-md-3 col-5 m-1 card d-flex flex-column p-0 overflow-hidden justify-content-between rounded"
             id={item.id}
             style={{ minHeight: 450 }}>
             <Link
@@ -97,6 +94,10 @@ const ProductCard = ({ AllProducts }: ProductCardProps) => {
       })}
     </div>
   );
+
+  const getCategoryIcons = (category: string) => {
+    
+  };
 };
 
 export default ProductCard;

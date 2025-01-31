@@ -5,7 +5,7 @@ const EbookProducts: EBookProductProps[] = [
   // E-book Ten Thousand Skies Above You
   {
     id: "Ten-Thousand-Skies-Above-You",
-    title: "Ten Thousand Skies Above You lorem, testing asdj",
+    title: "Ten Thousand Skies Above You lorem, testing asdj hello world im under water",
     price: 100000,
     createdData: "2024-12-11",
     category: "E-book",
@@ -47,11 +47,26 @@ const EbookProducts: EBookProductProps[] = [
       {
         id: 1,
         title: "Book Cover 2",
-        src: "https://images.pexels.com/photos/12079147/pexels-photo-12079147.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        src: "https://www.jojomoyes.com/wp-content/themes/jojomoyes_2014/scripts/php/thumb.php?src=https://www.jojomoyes.com/wp-content/uploads/9781405909075.jpg&w=276&h=412&zc=1&q=95",
       },
       {
         id: 2,
         title: "Book Cover 3",
+        src: "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/img20210506_16033754.jpg",
+      },
+      {
+        id: 3,
+        title: "Book Cover 4",
+        src: "https://m.media-amazon.com/images/I/61MflMre-zL._SL1200_.jpg",
+      },
+      {
+        id: 4,
+        title: "Book Cover 5",
+        src: "https://sandrasshelf.com/wp-content/uploads/2023/09/37.png",
+      },
+      {
+        id: 5,
+        title: "Book Cover 6",
         src: "https://images.pexels.com/photos/28943665/pexels-photo-28943665/free-photo-of-traditional-market-woman-in-vibrant-sari.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       },
     ],

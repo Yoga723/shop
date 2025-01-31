@@ -37,7 +37,7 @@ export default async function Page({ params }: any) {
           style={{ marginTop: 200 }}>
           <article className="container">
             <div className="row">
-              <div className="col-12 col-md-3">
+              <div className="col-12 col-md-4">
                 <div>
                    {/* Start of Gambar Product */}
 
@@ -45,7 +45,7 @@ export default async function Page({ params }: any) {
                   
                 </div>
               </div>
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-5" style={{border:"solid 2px red"}}>
                 {/* Product Description */}
                 <div>
                   <h1><b>{product.title}</b></h1>
@@ -74,7 +74,7 @@ export default async function Page({ params }: any) {
                 </div>
                 {/* End of Gambar Product */}
               </div>
-              <div className="col-12 col-md-3">
+              <div className="col-12 col-md-3" style={{border:"solid 2px red"}}>
                 <div className="roundedBorder">
                   <h4><b>Atur jumlah dan catatan</b></h4>
                   <p>{product.title}</p>

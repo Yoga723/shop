@@ -18,7 +18,7 @@ const CartSidebar = () => {
     getLocalCartData();
   }, []);
 
-  // bila quantity undefined maka fallback jadi 1 valuenya. Intinya default value quantity = 1
+  // bila quantity undefined maka di fallback jadi 1 valuenya. Intinya default value quantity = 1
   const total = cartData.reduce((acc, item) => acc + item.price * (item.quantity ?? 1), 0);
 
   return (

@@ -38,6 +38,8 @@ export default function Home() {
 
 
         {/*  End of product card section */}
+
+        {/* REMOVE THIS SECTION LATERRRRRR!!!!! */}
         <section className="section w-100 d-flex justify-content-center align-items-center flex-column">
           <button
             id="testBtn"
